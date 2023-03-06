@@ -1,8 +1,3 @@
-/*1 genero 16 numeri casuali da un min a un max;
-  2 assegno un numero a ogni cella
-  3 creare un ascoltatore di eventi che assegni una classe bg color a un quadrato
-   
-*/
 
 const buttonPlay = document.querySelector('.btn');
 let gridDomEasy = document.querySelector('.grid_easy');
@@ -51,14 +46,24 @@ buttonPlay.addEventListener('click',
 
 //CREAZIONE GRIGLIE IN TRE MODALITà
 
-
 for (let i = 1; i <= 100; i++) {
-
     const easySquare = squareEasy();
     easySquare.append([i]);
+
+    let bomblistArray = [];
+
+        for (let b = 1; b <= 16; b++) {
+            
+            const numberbombArray = uniqueBombNumber(bomblistArray, 1 , 100);
+            bomblistArray.push(numberbombArray);
+        }
     easySquare.addEventListener('click', 
         function() {
-            this.classList.toggle('bg-yellow');
+            
+            if (easySquare[i] == bomblistArray[b]) {
+                this.classList.add('bg-bomb');
+            }
+        this.classList.toggle('bg-yellow');
         }
     );
     gridDomEasy.append(easySquare);
@@ -112,15 +117,7 @@ function squareVeryHard () {
 }
 
 // GENERAZIONE BOMBE CASUALI
-let blacklistArray = [];
 
-for (let i = 1; i <= 16; i++){
-    
-    const numberbombArray = uniqueBombNumber(blacklistArray, 1 , 100);
-    blacklistArray.push(numberbombArray);
-}
-
-console.log(blacklistArray);
 function randomBombGen (min, max) {
 
     let randomBomb = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -160,7 +157,4 @@ function uniqueBombNumber (casualArray, min, max) {
         
     }
 }*/
-
-
-
 
