@@ -76,26 +76,18 @@ for (let i = 1; i <= 100; i++) {
                 pointViewer.innerHTML = `${yourPoint}`;
             } else {
                 this.classList.add('bg-yellow');
-                yourPoint++;
+                yourPoint = ++yourPoint;
                 pointViewer.innerHTML = `il tuo punteggio è di: ${yourPoint}`;
-            }
-
-            if (yourPoint = "Hai perso") {
-                easySquare.addEventListener('click', function(event){
-                    event.preventDefault();
-                }
-                )
             }
         }
     );
+    buttonPlay.addEventListener('click', function() {
+        yourPoint = 0;
+        easySquare.classList.remove('bg-yellow');
+        easySquare.classList.remove('bg-bomb');
 
-    if (yourPoint = "Hai perso"){
-        easySquare.addEventListener('click', function(event){
-            event.preventDefault();
-        }
-        )
     }
-
+    );
     gridDomEasy.append(easySquare);
 }
 
@@ -127,6 +119,13 @@ for (let i = 1; i <= 81; i++) {
             }
         }
     );
+    buttonPlay.addEventListener('click', function() {
+        yourPoint = 0;
+        hardSquare.classList.remove('bg-yellow');
+        hardSquare.classList.remove('bg-bomb');
+
+    }
+    );
     gridDomHard.append(hardSquare);
 }
 console.log(bomblistArrayHard);
@@ -155,6 +154,13 @@ for (let i = 1; i <= 49; i++) {
                 pointViewer.innerHTML = `il tuo punteggio è di: ${yourPoint}`;
             }
         }
+    );
+    buttonPlay.addEventListener('click', function() {
+        yourPoint = 0;
+        verySquare.classList.remove('bg-yellow');
+        verySquare.classList.remove('bg-bomb');
+
+    }
     );
     gridVeryHard.append(verySquare);
 }
