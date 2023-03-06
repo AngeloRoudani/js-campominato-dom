@@ -49,7 +49,7 @@ let pointViewer = document.getElementById('point_set');
 
 let yourPoint = 0;
 
-pointViewer.innerHTML = `il tuo punteggio è di: ${yourPoint}`;
+pointViewer.innerHTML = `Il tuo punteggio è di: ${yourPoint}`;
 
 
 
@@ -68,7 +68,7 @@ for (let i = 1; i <= 100; i++) {
     const easySquare = squareEasy();
     easySquare.append([i]);
     easySquare.addEventListener('click', 
-        function() {
+        function() { 
 
             if (bomblistArrayEasy.includes(i)) {
                 this.classList.add('bg-bomb');
@@ -79,8 +79,23 @@ for (let i = 1; i <= 100; i++) {
                 yourPoint++;
                 pointViewer.innerHTML = `il tuo punteggio è di: ${yourPoint}`;
             }
+
+            if (yourPoint = "Hai perso") {
+                easySquare.addEventListener('click', function(event){
+                    event.preventDefault();
+                }
+                )
+            }
         }
     );
+
+    if (yourPoint = "Hai perso"){
+        easySquare.addEventListener('click', function(event){
+            event.preventDefault();
+        }
+        )
+    }
+
     gridDomEasy.append(easySquare);
 }
 
