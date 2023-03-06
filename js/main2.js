@@ -46,48 +46,76 @@ buttonPlay.addEventListener('click',
 
 //CREAZIONE GRIGLIE IN TRE MODALITà
 
+// Griglia Facile
+const bomblistArrayEasy = [];
+
+for ( i = 1; i <= 16; i++) {
+        
+    let numberbomb = uniqueBombNumber(bomblistArrayEasy, 1 , 100);
+    bomblistArrayEasy.push(numberbomb);
+}
+
+console.log(bomblistArrayEasy);
+
 for (let i = 1; i <= 100; i++) {
     const easySquare = squareEasy();
     easySquare.append([i]);
-
-    let bomblistArray = [];
-
-        for (let b = 1; b <= 16; b++) {
-            
-            const numberbombArray = uniqueBombNumber(bomblistArray, 1 , 100);
-            bomblistArray.push(numberbombArray);
-        }
     easySquare.addEventListener('click', 
         function() {
-            
-            if (easySquare[i] == bomblistArray[b]) {
-                this.classList.add('bg-bomb');
+
+            if (bomblistArrayEasy.includes(i)) {
+                this.classList.add('bg-bomb')
+            } else {
+                this.classList.toggle('bg-yellow');
             }
-        this.classList.toggle('bg-yellow');
         }
     );
     gridDomEasy.append(easySquare);
 }
 
 console.log(gridDomEasy);
+//Griglia Difficile
+const bomblistArrayHard = [];
+
+for ( i = 1; i <= 16; i++) {
+        
+    let numberbomb = uniqueBombNumber(bomblistArrayEasy, 1 , 81);
+    bomblistArrayEasy.push(numberbomb);
+}
 
 for (let i = 1; i <= 81; i++) {
     const hardSquare = squareHard();
     hardSquare.append([i]);
     hardSquare.addEventListener('click', 
         function() {
-            this.classList.toggle('bg-yellow');
+            if (bomblistArrayHard.includes(i)) {
+                this.classList.add('bg-bomb')
+            } else {
+                this.classList.toggle('bg-yellow');
+            }
         }
     );
     gridDomHard.append(hardSquare);
 }
 
+//Griglia molto Difficile
+const bomblistArrayVery = [];
+
+for ( i = 1; i <= 16; i++) {
+        
+    let numberbomb = uniqueBombNumber(bomblistArrayVery, 1 , 81);
+    bomblistArrayVery.push(numberbomb);
+}
 for (let i = 1; i <= 49; i++) {
     const verySquare = squareVeryHard();
     verySquare.append([i]);
     verySquare.addEventListener('click', 
         function() {
-            this.classList.toggle('bg-yellow');
+            if (bomblistArrayVery.includes(i)) {
+                this.classList.add('bg-bomb')
+            } else {
+                this.classList.toggle('bg-yellow');
+            }
         }
     );
     gridVeryHard.append(verySquare);
