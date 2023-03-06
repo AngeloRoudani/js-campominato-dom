@@ -115,6 +115,7 @@ main {
 #point_set {
     margin: auto;
     text-align: center;
+    padding-bottom: 10px;
 }
 
 footer {
