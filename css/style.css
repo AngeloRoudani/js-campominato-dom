@@ -53,6 +53,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     border: solid 1px black;
+    
 }
 
 .grid_hard {
@@ -112,7 +113,8 @@ main {
 }
 
 #point_set {
-    display: inline-block;
+    margin: auto;
+    text-align: center;
 }
 
 footer {

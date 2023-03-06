@@ -23,19 +23,19 @@ buttonPlay.addEventListener('click',
         let battleMode = document.getElementById('mode').value;
 
         if (battleMode == "easy") {
-            
+            yourPoint = 0;
             gridVeryHard.classList.add('hidden');
             gridDomEasy.classList.remove('hidden');
             gridDomHard.classList.add('hidden');
 
         } else if (battleMode == "hard") {
-            
+            yourPoint = 0;
             gridDomEasy.classList.add('hidden');
             gridVeryHard.classList.add('hidden');
             gridDomHard.classList.remove('hidden');
 
         } else if (battleMode == "very_hard"){
-            
+            yourPoint = 0;
             gridDomEasy.classList.add('hidden');
             gridDomHard.classList.add('hidden');
             gridVeryHard.classList.remove('hidden');
@@ -104,9 +104,11 @@ for (let i = 1; i <= 81; i++) {
             if (bomblistArrayHard.includes(i)) {
                 this.classList.add('bg-bomb');
                 yourPoint = "Hai perso";
+                pointViewer.innerHTML = `${yourPoint}`;
             } else {
                 this.classList.toggle('bg-yellow');
                 yourPoint = i++;
+                pointViewer.innerHTML = `il tuo punteggio è di: ${yourPoint}`;
             }
         }
     );
@@ -131,9 +133,11 @@ for (let i = 1; i <= 49; i++) {
             if (bomblistArrayVery.includes(i)) {
                 this.classList.add('bg-bomb');
                 yourPoint = "Hai perso";
+                pointViewer.innerHTML = `${yourPoint}`;
             } else {
                 this.classList.toggle('bg-yellow');
                 yourPoint = i++;
+                pointViewer.innerHTML = `il tuo punteggio è di: ${yourPoint}`;
             }
         }
     );
