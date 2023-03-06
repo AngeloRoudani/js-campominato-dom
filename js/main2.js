@@ -43,6 +43,15 @@ buttonPlay.addEventListener('click',
         }
     }
 )
+//GENERAZIONE PUNTEGGIO
+
+let pointViewer = document.getElementById('point_set');
+
+let yourPoint = 0;
+
+pointViewer.innerHTML = `il tuo punteggio è di: ${yourPoint}`;
+
+
 
 //CREAZIONE GRIGLIE IN TRE MODALITà
 
@@ -62,9 +71,13 @@ for (let i = 1; i <= 100; i++) {
         function() {
 
             if (bomblistArrayEasy.includes(i)) {
-                this.classList.add('bg-bomb')
+                this.classList.add('bg-bomb');
+                yourPoint = "Hai perso";
+                pointViewer.innerHTML = `${yourPoint}`;
             } else {
-                this.classList.toggle('bg-yellow');
+                this.classList.add('bg-yellow');
+                yourPoint++;
+                pointViewer.innerHTML = `il tuo punteggio è di: ${yourPoint}`;
             }
         }
     );
@@ -72,7 +85,9 @@ for (let i = 1; i <= 100; i++) {
 }
 
 console.log(bomblistArrayEasy);
+
 //Griglia Difficile
+
 const bomblistArrayHard = [];
 
 for ( i = 1; i <= 16; i++) {
@@ -87,16 +102,20 @@ for (let i = 1; i <= 81; i++) {
     hardSquare.addEventListener('click', 
         function() {
             if (bomblistArrayHard.includes(i)) {
-                this.classList.add('bg-bomb')
+                this.classList.add('bg-bomb');
+                yourPoint = "Hai perso";
             } else {
                 this.classList.toggle('bg-yellow');
+                yourPoint = i++;
             }
         }
     );
     gridDomHard.append(hardSquare);
 }
 console.log(bomblistArrayHard);
+
 //Griglia molto Difficile
+
 const bomblistArrayVery = [];
 
 for ( i = 1; i <= 16; i++) {
@@ -110,15 +129,18 @@ for (let i = 1; i <= 49; i++) {
     verySquare.addEventListener('click', 
         function() {
             if (bomblistArrayVery.includes(i)) {
-                this.classList.add('bg-bomb')
+                this.classList.add('bg-bomb');
+                yourPoint = "Hai perso";
             } else {
                 this.classList.toggle('bg-yellow');
+                yourPoint = i++;
             }
         }
     );
     gridVeryHard.append(verySquare);
 }
 console.log(bomblistArrayVery);
+
 // GENERAZIONE QUADRATI 
 
 function squareEasy () {
