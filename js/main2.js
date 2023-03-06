@@ -5,16 +5,6 @@ let gridDomHard = document.querySelector('.grid_hard');
 let gridVeryHard = document.querySelector('.grid_very');
 
 
-/*let easySquare = squareEasy();
-console.log(easySquare);
-let hardSquare = squareHard();
-let verySquare = squareVeryHard();
-
-squareGeneratorGrid(gridDomEasy, 1, 100, easySquare);
-squareGeneratorGrid(gridDomHard, 1, 81, hardSquare);
-squareGeneratorGrid(gridVeryHard, 1, 49, verySquare);
-*/
-
 // AVVIO GIOCO DAL BUTTON IN TRE MODALITA
 
 buttonPlay.addEventListener('click', 
@@ -213,21 +203,5 @@ function uniqueBombNumber (casualArray, min, max) {
 
 
 
-/*function squareGeneratorGrid (gridDomPlace, min, max, squareFunction) {
 
-    let i = min;
-    
-    while ( i <= max) {
-        let squareCell = squareFunction;
-        squareCell.innerHTML =`<div class="number">${i}</div>`;
-        squareCell.addEventListener('click', 
-            function() {
-                this.classList.toggle('bg-yellow');
-            }
-        );
-        gridDomPlace.append(squareCell);
-        i++;
-        
-    }
-}*/
 
