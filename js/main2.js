@@ -55,8 +55,6 @@ for ( i = 1; i <= 16; i++) {
     bomblistArrayEasy.push(numberbomb);
 }
 
-console.log(bomblistArrayEasy);
-
 for (let i = 1; i <= 100; i++) {
     const easySquare = squareEasy();
     easySquare.append([i]);
@@ -73,14 +71,14 @@ for (let i = 1; i <= 100; i++) {
     gridDomEasy.append(easySquare);
 }
 
-console.log(gridDomEasy);
+console.log(bomblistArrayEasy);
 //Griglia Difficile
 const bomblistArrayHard = [];
 
 for ( i = 1; i <= 16; i++) {
         
     let numberbomb = uniqueBombNumber(bomblistArrayEasy, 1 , 81);
-    bomblistArrayEasy.push(numberbomb);
+    bomblistArrayHard.push(numberbomb);
 }
 
 for (let i = 1; i <= 81; i++) {
@@ -97,7 +95,7 @@ for (let i = 1; i <= 81; i++) {
     );
     gridDomHard.append(hardSquare);
 }
-
+console.log(bomblistArrayHard);
 //Griglia molto Difficile
 const bomblistArrayVery = [];
 
@@ -120,7 +118,7 @@ for (let i = 1; i <= 49; i++) {
     );
     gridVeryHard.append(verySquare);
 }
-
+console.log(bomblistArrayVery);
 // GENERAZIONE QUADRATI 
 
 function squareEasy () {
